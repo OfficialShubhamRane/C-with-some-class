@@ -3,6 +3,54 @@
 
 #define CAPACITY 5000
 
+/* Classes */
+class dog {
+
+private:
+	std::string name;
+	int age;
+	std::string breed;
+	bool is_kids_friendly;
+
+
+
+public:
+	dog(std::string name_i,
+		int age_i,
+		std::string breed_i,
+		bool is_kids_friendly_i) {
+
+		name = name_i;
+		age = age_i;
+		breed = breed_i;
+		is_kids_friendly = is_kids_friendly_i;
+	}
+
+	std::string get_name() {
+		return name;
+	}
+
+	int get_age() {
+		return age;
+	}
+
+	std::string get_breed() {
+		return breed;
+	}
+
+	bool get_is_kids_friendly() {
+		return is_kids_friendly;
+	}
+
+	void set_age(int age_i) {
+		age = age_i;
+	}
+
+	std::string to_string() {
+		return "name: [" + name + "] age: [" + std::to_string(age) + "] breed: [" + breed + "] is_kids_friendly: [" + std::to_string(is_kids_friendly) + "]";
+	}
+};
+
 int main() {
 	/* Command line input */
 	/*
@@ -70,7 +118,7 @@ int main() {
 	*/
 
 	/* calculating average of numbers in array*/
-
+	/*
 	float numbers[] = {20.2,25.7,37.1,71.25,55.55};
 	float sum = 0;
 	
@@ -82,6 +130,33 @@ int main() {
 	}
 
 	std::cout << sum / sizeof(numbers) << std::endl;
+	*/
+
+	/* Structures */
+	/*
+	enum cow_purpose {
+		pet,
+		diary
+	};
+
+	struct cow {
+		std::string name;
+		int age;
+		unsigned char purpose;
+	};
+
+	cow my_cow;
+	my_cow.name = "Betsy";
+	my_cow.age = 5;
+	my_cow.purpose = pet;
+
+	std::cout << my_cow.name << " is " << my_cow.age << " years old and her purpose is " << (int)my_cow.purpose << std::endl;
+	*/
+
+	/* classes */
+	dog dog("Betsy",5 ,"Labrador",1);
+	std::cout << dog.to_string() << std::endl;
 
 	return(0);
 }
+
